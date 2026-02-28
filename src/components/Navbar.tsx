@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 const navLinks = [
   { label: "الرئيسية", href: "/" },
   { label: "خدماتنا", href: "/services" },
-  { label: "ماذا عنا", href: "/about" },
-  { label: "كيف نعمل", href: "/how" },
-  { label: "تواصل معنا", href: "/contact" },
+  { label: "الأسعار", href: "/pricing" },
+  { label: "آراء العملاء", href: "/reviews" },
+  { label: "حجوزاتي", href: "/bookings" },
 ];
 
 const Navbar = () => {
@@ -17,7 +17,6 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 right-0 left-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <Wrench className="w-6 h-6 text-primary" />
           <span className="text-xl font-bold">
@@ -25,7 +24,6 @@ const Navbar = () => {
           </span>
         </Link>
 
-        {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
             <Link
@@ -38,23 +36,24 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <Button variant="outline" size="sm" className="rounded-full">
-            Dashboard
-          </Button>
-          <Button size="sm" className="rounded-full">
-            انضم لفنيي
-          </Button>
+          <Link to="/dashboard">
+            <Button variant="outline" size="sm" className="rounded-full">
+              Dashboard
+            </Button>
+          </Link>
+          <Link to="/request-service">
+            <Button size="sm" className="rounded-full">
+              اطلب خدمة الآن
+            </Button>
+          </Link>
         </div>
 
-        {/* Mobile toggle */}
         <button className="md:hidden" onClick={() => setOpen(!open)}>
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* Mobile menu */}
       {open && (
         <div className="md:hidden bg-background border-t border-border px-4 py-4 space-y-2">
           {navLinks.map((link) => (
@@ -68,8 +67,12 @@ const Navbar = () => {
             </Link>
           ))}
           <div className="flex gap-2 pt-2">
-            <Button variant="outline" size="sm" className="rounded-full flex-1">Dashboard</Button>
-            <Button size="sm" className="rounded-full flex-1">انضم لفنيي</Button>
+            <Link to="/dashboard" className="flex-1">
+              <Button variant="outline" size="sm" className="rounded-full w-full">Dashboard</Button>
+            </Link>
+            <Link to="/request-service" className="flex-1">
+              <Button size="sm" className="rounded-full w-full">اطلب خدمة الآن</Button>
+            </Link>
           </div>
         </div>
       )}

@@ -29,7 +29,7 @@ const HeroSection = () => {
             سريع، موثوق، ومضمون.
           </p>
           <div className="flex gap-4 justify-start">
-            <Link to="/booking">
+            <Link to="/request-service">
               <Button size="lg" className="rounded-xl text-base px-8 py-6">
                 احجز الآن
               </Button>
