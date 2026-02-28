@@ -1,13 +1,23 @@
-import LoginForm from "@/components/LoginForm";
-import GradientPanel from "@/components/GradientPanel";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import ServicesTicker from "@/components/ServicesTicker";
+import ServicesGrid from "@/components/ServicesGrid";
+import WhyFixly from "@/components/WhyFixly";
+import AboutSection from "@/components/AboutSection";
+import EmergencySection from "@/components/EmergencySection";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="relative min-h-screen w-full bg-background">
-      <div className="grid h-full min-h-screen lg:grid-cols-2">
-        <LoginForm />
-        <GradientPanel />
-      </div>
+    <div className="min-h-screen">
+      <Navbar />
+      <HeroSection />
+      <ServicesTicker />
+      <ServicesGrid />
+      <WhyFixly />
+      <AboutSection />
+      <EmergencySection />
+      <Footer />
     </div>
   );
 };
