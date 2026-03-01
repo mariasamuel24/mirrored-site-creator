@@ -1,4 +1,4 @@
-import { Wrench } from "lucide-react";
+import { Wrench, Phone, Facebook, Instagram, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -45,7 +45,21 @@ const Footer = () => {
           {/* Contact */}
           <div>
             <h4 className="font-bold mb-4">تواصل معنا</h4>
-            <p className="text-sm opacity-70">القاهرة، مصر</p>
+            <p className="text-sm opacity-70 mb-4">القاهرة، مصر</p>
+            <div className="flex gap-3">
+              <a href="#" className="w-9 h-9 rounded-full bg-background/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all">
+                <Phone className="w-4 h-4" />
+              </a>
+              <a href="#" className="w-9 h-9 rounded-full bg-background/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all">
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a href="#" className="w-9 h-9 rounded-full bg-background/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all">
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a href="#" className="w-9 h-9 rounded-full bg-background/10 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all">
+                <Twitter className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </div>
 
